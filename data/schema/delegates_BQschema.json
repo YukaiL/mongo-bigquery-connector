@@ -1,0 +1,235 @@
+[
+  {
+    "mode": "NULLABLE", 
+    "name": "delegateType", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "ingestionTime", 
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE", 
+    "name": "version", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "delegateName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REPEATED", 
+    "name": "tags", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "lastHeartBeat", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "profileResult", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "connected", 
+    "type": "BOOLEAN"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "status", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "delegateProfileId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "profileError", 
+    "type": "BOOLEAN"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "hostName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "ip", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "accountId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "_id", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "email", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "name", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "uuid", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "lastUpdatedBy", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "appId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "delegateGroupName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "createdAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "lastUpdatedAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "description", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "REPEATED", 
+        "name": "taskTypes", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "environmentTypes", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "accountId", 
+        "type": "STRING"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "email", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "name", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "uuid", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "createdBy", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "environments", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "lastUpdatedAt", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REPEATED", 
+        "name": "applications", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "appId", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "createdAt", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "name", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "_id", 
+        "type": "STRING"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "email", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "name", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "uuid", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "lastUpdatedBy", 
+        "type": "RECORD"
+      }
+    ], 
+    "mode": "REPEATED", 
+    "name": "excludeScopes", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "sampleDelegate", 
+    "type": "BOOLEAN"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "profileExecutedAt", 
+    "type": "INTEGER"
+  }
+]

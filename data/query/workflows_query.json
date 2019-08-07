@@ -1,0 +1,33 @@
+{
+  "source_table": "workflows",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "linkedTemplateUuids": 1,
+        "accountId": 1,
+        "orchestration": 1,
+        "keywords": 1,
+        "templatized": 1,
+        "templateExpressions": 1,
+        "description": 1,
+        "_id": 1,
+        "name": 1,
+        "lastUpdatedAt": 1,
+        "workflowType": 1,
+        "defaultVersion": 1,
+        "createdAt": 1,
+        "envId": 1,
+        "appId": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "workflows",
+  "isSnapshot": true
+}

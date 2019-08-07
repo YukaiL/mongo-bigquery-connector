@@ -1,0 +1,216 @@
+[
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "email", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "name", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "uuid", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "lastUpdatedBy", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "ingestionTime", 
+    "type": "INTEGER"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "daysBeforeUserNotifiedOfPasswordExpiration", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "daysBeforePasswordExpires", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "enabled", 
+        "type": "BOOLEAN"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "passwordExpirationPolicy", 
+    "type": "RECORD"
+  }, 
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "email", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "name", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "uuid", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "lastUpdatedBy", 
+            "type": "RECORD"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "createdAt", 
+            "type": "INTEGER"
+          }, 
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "email", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "name", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "uuid", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "NULLABLE", 
+            "name": "createdBy", 
+            "type": "RECORD"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "_id", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "isDefault", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "lastUpdatedAt", 
+            "type": "INTEGER"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "isSsoLinked", 
+            "type": "BOOLEAN"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "name", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "userGroupsToNotify", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "notifyUser", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "lockOutPeriod", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "numberOfFailedAttemptsBeforeLockout", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "enableLockoutPolicy", 
+        "type": "BOOLEAN"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "userLockoutPolicy", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "lastUpdatedAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "accountId", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "minNumberOfDigits", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "minNumberOfSpecialCharacters", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "minNumberOfLowercaseCharacters", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "minNumberOfUppercaseCharacters", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "minNumberOfCharacters", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "enabled", 
+        "type": "BOOLEAN"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "passwordStrengthPolicy", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "className", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "_id", 
+    "type": "STRING"
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "mode": "NULLABLE", 
+    "name": "ssoGroupName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "ingestionTime", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "linkedSsoDisplayName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "memberIds", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "email", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "name", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "uuid", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "createdBy", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "description", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "email", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "name", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "uuid", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "lastUpdatedBy", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "_id", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "name", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "lastUpdatedAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "accountId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "appPermissions", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "createdAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "isDefault", 
+    "type": "BOOLEAN"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "REPEATED", 
+        "name": "emailAddresses", 
+        "type": "STRING"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "outgoingWebhookUrl", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "name", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "slackConfig", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pagerDutyIntegrationKey", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "sendMailToNewMembers", 
+        "type": "BOOLEAN"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "useIndividualEmails", 
+        "type": "BOOLEAN"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "notificationSettings", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "isSsoLinked", 
+    "type": "BOOLEAN"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "REPEATED", 
+        "name": "permissions", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "accountPermissions", 
+    "type": "RECORD"
+  }
+]

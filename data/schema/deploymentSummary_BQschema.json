@@ -1,0 +1,170 @@
+[
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "autoScalingGroupName", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "awsAmiDeploymentKey", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "ingestionTime", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "pipelineExecutionName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "artifactId", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "applicationName", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "pcfDeploymentKey", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "createdAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "pipelineExecutionId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "workflowExecutionId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "workflowId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "lastUpdatedAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "infraMappingId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "artifactBuildNum", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "deployedAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "workflowExecutionName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "accountId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "stateExecutionInstanceId", 
+    "type": "STRING"
+  }, 
+  { 
+    "mode": "NULLABLE", 
+    "name": "deploymentInfo", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "_id", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "deployedById", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "artifactName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "artifactStreamId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "artifactSourceName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "deployedByName", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "value", 
+            "type": "STRING"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "name", 
+            "type": "STRING"
+          }
+        ], 
+        "mode": "REPEATED", 
+        "name": "labels", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "containerServiceName", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "newVersion", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "containerDeploymentKey", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "appId", 
+    "type": "STRING"
+  }
+]

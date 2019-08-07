@@ -1,0 +1,27 @@
+{
+  "source_table": "terraformConfig",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "command": 1,
+        "className": 1,
+        "targets": 1,
+        "sourceRepoReference": 1,
+        "sourceRepoSettingId": 1,
+        "backendConfigs.valueType": 1,
+        "backendConfigs.value": 1,
+        "backendConfigs.name": 1,
+        "_id": 1,
+        "variables": 1,
+        "entityId": 1,
+        "createdAt": 1,
+        "workflowExecutionId": 1,
+        "lastUpdatedAt": 1,
+        "appId": 1
+      }
+    }
+  ],
+  "target_table": "terraformConfig",
+  "isSnapshot": true
+}

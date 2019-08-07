@@ -1,0 +1,42 @@
+[
+  {
+    "mode": "NULLABLE", 
+    "name": "createdAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "ingestionTime", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REPEATED", 
+    "name": "accountIds", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "obsolete", 
+    "type": "BOOLEAN"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "lastUpdatedAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "enabled", 
+    "type": "BOOLEAN"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "name", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "_id", 
+    "type": "STRING"
+  }
+]

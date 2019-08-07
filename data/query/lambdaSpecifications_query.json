@@ -1,0 +1,32 @@
+{
+  "source_table": "lambdaSpecifications",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "functionName": 1,
+        "handler": 1,
+        "timeout": 1,
+        "memorySize": 1,
+        "className": 1,
+        "serviceId": 1,
+        "runtime": 1,
+        "appId": 1,
+        "functions": 1,
+        "defaults": 1,
+        "createdAt": 1,
+        "_id": 1,
+        "lastUpdatedAt": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+
+  "target_table": "lambdaSpecifications",
+  "isSnapshot": true
+}

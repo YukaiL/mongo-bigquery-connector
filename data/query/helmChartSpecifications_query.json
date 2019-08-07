@@ -1,0 +1,27 @@
+{
+  "source_table": "helmChartSpecifications",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "serviceId": 1,
+        "appId": 1,
+        "className": 1,
+        "chartName": 1,
+        "chartVersion": 1,
+        "createdAt": 1,
+        "_id": 1,
+        "lastUpdatedAt": 1,
+        "chartUrl": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "helmChartSpecifications",
+  "isSnapshot": true
+}

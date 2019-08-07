@@ -1,0 +1,347 @@
+[
+  {
+    "mode": "NULLABLE", 
+    "name": "envName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "ingestionTime", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REPEATED", 
+    "name": "infraMappingIds", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "envId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "orchestrationType", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "stateMachine", 
+    "type": "STRING"
+  }, 
+  {
+    "description": "bq-datetime", 
+    "mode": "NULLABLE", 
+    "name": "validUntil", 
+    "type": "TIMESTAMP"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "endTs", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REPEATED", 
+    "name": "keywords", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "buildName", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "buildUrl", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "revision", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "artifactSource", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "metadata", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "artifactStreamId", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "REPEATED", 
+    "name": "buildExecutionSummaries", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "REPEATED", 
+    "name": "serviceIds", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "displayName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "name", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "_id", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "startTs", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "pipelineExecution", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "queued", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "inprogress", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "failed", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "success", 
+        "type": "INTEGER"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "breakdown", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "lastUpdatedAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "workflowId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "status", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "email", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "name", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "uuid", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "lastUpdatedBy", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "appName", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REPEATED", 
+    "name": "envIds", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "name", 
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE", 
+        "name": "email", 
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE", 
+        "name": "uuid", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "createdBy", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "releaseNo", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "total", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "executionArgs", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "envType", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "name", 
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE", 
+        "name": "email", 
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE", 
+        "name": "uuid", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "triggeredBy", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "serviceExecutionSummaries", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "pipelineExecutionId", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "pipelineName", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "pipelineId", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "pipelineSummary", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "isBaseline", 
+    "type": "BOOLEAN"
+  }, 
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE", 
+        "name": "environmentType", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "uuid", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "name", 
+        "type": "STRING"
+      }
+    ], 
+    "mode": "REPEATED", 
+    "name": "environments", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "workflowType", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "deploymentTriggerId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "appId", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "createdAt", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "artifacts", 
+    "type": "STRING"
+  },  
+  {
+    "mode": "NULLABLE", 
+    "name": "stateMachineId", 
+    "type": "STRING"
+  },  
+  {
+    "mode": "NULLABLE", 
+    "name": "cloudProviderIds", 
+    "type": "STRING"
+  },  
+  {
+    "mode": "NULLABLE", 
+    "name": "workflowIds", 
+    "type": "STRING"
+  }
+]

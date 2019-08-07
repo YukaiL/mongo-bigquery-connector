@@ -1,0 +1,23 @@
+{
+  "source_table": "templateGalleries",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "description": 1,
+        "className": 1,
+        "keywords": 1,
+        "_id": 1,
+        "name": 1,
+        "lastUpdatedAt": 1,
+        "accountId": 1,
+        "global": 1,
+        "appId": 1,
+        "referencedGalleryId": 1,
+        "createdAt": 1
+      }
+    }
+  ],
+  "target_table": "templateGalleries",
+  "isSnapshot": true
+}

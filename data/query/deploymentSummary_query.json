@@ -1,0 +1,39 @@
+{
+  "source_table": "deploymentSummary",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "awsAmiDeploymentKey.autoScalingGroupName": 1,
+        "pipelineExecutionName": 1,
+        "artifactId": 1,
+        "pcfDeploymentKey.applicationName": 1,
+        "createdAt": 1,
+        "pipelineExecutionId": 1,
+        "workflowExecutionId": 1,
+        "workflowId": 1,
+        "lastUpdatedAt": 1,
+        "infraMappingId": 1,
+        "artifactBuildNum": 1,
+        "deployedAt": 1,
+        "workflowExecutionName": 1,
+        "accountId": 1,
+        "stateExecutionInstanceId": 1,
+        "deploymentInfo": 1,
+        "_id": 1,
+        "deployedById": 1,
+        "artifactName": 1,
+        "artifactStreamId": 1,
+        "artifactSourceName": 1,
+        "deployedByName": 1,
+        "containerDeploymentKey.labels.value": 1,
+        "containerDeploymentKey.labels.name": 1,
+        "containerDeploymentKey.containerServiceName": 1,
+        "containerDeploymentKey.newVersion": 1,
+        "appId": 1
+      }
+    }
+  ],
+  "target_table": "deploymentSummary",
+  "isSnapshot": false
+}

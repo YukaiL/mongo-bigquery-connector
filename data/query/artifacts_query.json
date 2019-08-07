@@ -1,0 +1,37 @@
+{
+  "source_table": "artifacts",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "accountId": 1,
+        "contentStatus": 1,
+        "lastUpdatedAt": 1,
+        "createdAt": 1,
+        "_id": 1,
+        "revision": 1,
+        "description": 1,
+        "artifactStreamId": 1,
+        "metadata": 1,
+        "appId": 1,
+        "artifactSourceName": 1,
+        "errorMessage": 1,
+        "artifactFiles": 1,
+        "displayName": 1,
+        "serviceIds": 1,
+        "status": 1,
+        "uiDisplayName": 1,
+        "artifactStreamType": 1,
+        "settingId": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "artifacts",
+  "isSnapshot": false
+}

@@ -1,0 +1,19 @@
+{
+  "source_table": "featureFlag",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "createdAt": 1,
+        "accountIds": 1,
+        "obsolete": 1,
+        "lastUpdatedAt": 1,
+        "enabled": 1,
+        "name": 1,
+        "_id": 1
+      }
+    }
+  ],
+  "target_table": "featureFlag",
+  "isSnapshot": true
+}

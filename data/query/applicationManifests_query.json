@@ -1,0 +1,36 @@
+{
+  "source_table": "applicationManifests",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "kind": 1,
+        "className": 1,
+        "serviceId": 1,
+        "envId": 1,
+        "appId": 1,
+        "gitFileConfig.commitId": 1,
+        "gitFileConfig.filePath": 1,
+        "gitFileConfig.branch": 1,
+        "gitFileConfig.useBranch": 1,
+        "gitFileConfig.connectorId": 1,
+        "storeType": 1,
+        "createdAt": 1,
+        "helmChartConfig.chartUrl": 1,
+        "helmChartConfig.chartVersion": 1,
+        "helmChartConfig.chartName": 1,
+        "helmChartConfig.connectorId": 1,
+        "_id": 1,
+        "lastUpdatedAt": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "applicationManifests",
+  "isSnapshot": true
+}

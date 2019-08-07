@@ -1,0 +1,23 @@
+{
+  "name": "harnessanalytics",
+  "version": "1.0.0",
+  "description": "HarnessAnalytics is an internal intern project at Harness. It consists of a scirpt which queries data from mongodb and streams it into Google BigQuery, and a custom dashboard generated from BigQuery data in Google Data Studio for analysis purpose.",
+  "main": "stream_main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wings-software/HarnessAnalytics.git"
+  },
+  "author": "yukailuo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wings-software/HarnessAnalytics/issues"
+  },
+  "homepage": "https://github.com/wings-software/HarnessAnalytics#readme",
+  "dependencies": {
+    "@google-cloud/bigquery": "^4.1.5",
+    "express": "^4.17.1"
+  }
+}

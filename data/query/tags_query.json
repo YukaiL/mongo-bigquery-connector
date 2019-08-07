@@ -1,0 +1,29 @@
+{
+  "source_table": "tags",
+  "query": [
+    {
+      "$project": {
+        "lastUpdatedAt": 1,
+        "ingestionTime": 1,
+        "createdAt": 1,
+        "lastUpdatedBy.email": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.uuid": 1,
+        "key": 1,
+        "allowedValues": 1,
+        "createdBy.email": 1,
+        "createdBy.name": 1,
+        "createdBy.uuid": 1,
+        "accountId": 1,
+        "_id": 1
+      }
+    }
+  ],
+  "target_table": "tags",
+  "isSnapshot": true
+}
+
+
+
+
+

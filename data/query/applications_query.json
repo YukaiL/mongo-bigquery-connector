@@ -1,0 +1,26 @@
+{
+  "source_table": "applications",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "createdAt": 1,
+        "appId": 1,
+        "accountId": 1,
+        "lastUpdatedAt": 1,
+        "name": 1,
+        "keywords": 1,
+        "description": 1,
+        "_id": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "applications",
+  "isSnapshot": true
+}

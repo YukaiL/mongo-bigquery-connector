@@ -1,0 +1,30 @@
+{
+  "source_table": "stateMachines",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "lastUpdatedAt": 1,
+        "createdAt": 1,
+        "originId": 1,
+        "originVersion": 1,
+        "orchestrationWorkflow": 1,
+        "transitions": 1,
+        "valid": 1,
+        "_id": 1,
+        "childStateMachines": 1,
+        "states": 1,
+        "initialStateName": 1,
+        "appId": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "stateMachines",
+  "isSnapshot": true
+}

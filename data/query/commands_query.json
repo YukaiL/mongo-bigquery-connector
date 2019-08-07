@@ -1,0 +1,33 @@
+{
+  "source_table": "commands",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "lastUpdatedAt": 1,
+        "createdAt": 1,
+        "templateVariables": 1,
+        "appId": 1,
+        "commandType": 1,
+        "commandUnitType": 1,
+        "artifactNeeded": 1,
+        "className": 1,
+        "version": 1,
+        "deploymentType": 1,
+        "commandExecutionStatus": 1,
+        "_id": 1,
+        "name": 1,
+        "originEntityId": 1,
+        "commandUnits": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "commands",
+  "isSnapshot": true
+}

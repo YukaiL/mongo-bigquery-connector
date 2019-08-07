@@ -1,0 +1,34 @@
+{
+  "source_table": "triggers",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "workflowVariables": 1,
+        "description": 1,
+        "lastUpdatedAt": 1,
+        "appId": 1,
+        "excludeHostsWithSameArtifact": 1,
+        "workflowType": 1,
+        "className": 1,
+        "createdAt": 1,
+        "condition": 1,
+        "pipelineName": 1,
+        "pipelineId": 1,
+        "workflowId": 1,
+        "_id": 1,
+        "name": 1,
+        "workflowName": 1,
+        "artifactSelections": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "triggers",
+  "isSnapshot": true
+}

@@ -1,0 +1,37 @@
+{
+  "source_table": "userGroups",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "ssoGroupName": 1,
+        "linkedSsoDisplayName": 1,
+        "memberIds": 1,
+        "description": 1,
+        "_id": 1,
+        "name": 1,
+        "lastUpdatedAt": 1,
+        "accountId": 1,
+        "appPermissions": 1,
+        "createdAt": 1,
+        "isDefault": 1,
+        "notificationSettings.emailAddresses": 1,
+        "notificationSettings.slackConfig.outgoingWebhookUrl": 1,
+        "notificationSettings.slackConfig.name": 1,
+        "notificationSettings.pagerDutyIntegrationKey": 1,
+        "notificationSettings.sendMailToNewMembers": 1,
+        "notificationSettings.useIndividualEmails": 1,
+        "isSsoLinked": 1,
+        "accountPermissions.permissions": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "userGroups",
+  "isSnapshot": true
+}

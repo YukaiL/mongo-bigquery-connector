@@ -1,0 +1,41 @@
+{
+  "source_table": "audits",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "responseStatusCode": 1,
+        "requestPayloadUuid": 1,
+        "lastUpdatedAt": 1,
+        "createdAt": 1,
+        "requestTime": 1,
+        "remoteUser": 1,
+        "responseTime": 1,
+        "localIpAddress": 1,
+        "_id": 1,
+        "remoteHostName": 1,
+        "resourcePath": 1,
+        "queryParams": 1,
+        "localHostName": 1,
+        "responsePayloadUuid": 1,
+        "url": 1,
+        "requestMethod": 1,
+        "headerString": 1,
+        "remoteHostPort": 1,
+        "remoteIpAddress": 1,
+        "entityAuditRecords": 1,
+        "accountId": 1,
+        "failureStatusMsg": 1,
+        "gitAuditDetails": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "audits",
+  "isSnapshot": false
+}

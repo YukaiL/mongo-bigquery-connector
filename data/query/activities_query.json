@@ -1,0 +1,57 @@
+{
+  "source_table": "activities",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "validUntil": 1,
+        "version": 1,
+        "appId": 1,
+        "artifactName": 1,
+        "isPipeline": 1,
+        "artifactStreamName": 1,
+        "artifactStreamId": 1,
+        "logPurged": 1,
+        "commandUnitType": 1,
+        "commandType": 1,
+        "environmentId": 1,
+        "applicationName": 1,
+        "type": 1,
+        "status": 1,
+        "triggeredBy.name": 1,
+        "triggeredBy.email": 1,
+        "serviceTemplateName": 1,
+        "environmentType": 1,
+        "artifactId": 1,
+        "serviceTemplateId": 1,
+        "createdAt": 1,
+        "commandName": 1,
+        "environmentName": 1,
+        "serviceId": 1,
+        "serviceInstanceId": 1,
+        "serviceName": 1,
+        "commandUnits": 1,
+        "_id": 1,
+        "hostName": 1,
+        "lastUpdatedAt": 1,
+        "workflowId": 1,
+        "stateExecutionInstanceId": 1,
+        "publicDns": 1,
+        "workflowExecutionId": 1,
+        "workflowExecutionName": 1,
+        "workflowType": 1,
+        "stateExecutionInstanceName": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "activities",
+  "isSnapshot": false
+}
+
+

@@ -1,0 +1,32 @@
+{
+  "source_table": "serviceVariables",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "lastUpdatedAt": 1,
+        "type": 1,
+        "templateId": 1,
+        "parentServiceVariableId": 1,
+        "createdAt": 1,
+        "entityType": 1,
+        "entityId": 1,
+        "accountId": 1,
+        "overrideType": 1,
+        "_id": 1,
+        "name": 1,
+        "value": 1,
+        "envId": 1,
+        "appId": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "serviceVariables",
+  "isSnapshot": true
+}

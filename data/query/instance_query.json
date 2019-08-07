@@ -1,0 +1,48 @@
+{
+  "source_table": "instance",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "lastPipelineExecutionName": 1,
+        "lastArtifactName": 1,
+        "lastArtifactId": 1,
+        "lastArtifactStreamId": 1,
+        "isDeleted": 1,
+        "deletedAt": 1,
+        "lastPipelineExecutionId": 1,
+        "lastUpdatedAt": 1,
+        "appName": 1,
+        "serviceName": 1,
+        "envType": 1,
+        "computeProviderId": 1,
+        "lastArtifactBuildNum": 1,
+        "appId": 1,
+        "infraMappingName": 1,
+        "_id": 1,
+        "computeProviderName": 1,
+        "lastArtifactSourceName": 1,
+        "envName": 1,
+        "accountId": 1,
+        "lastWorkflowExecutionName": 1,
+        "serviceId": 1,
+        "instanceType": 1,
+        "infraMappingId": 1,
+        "envId": 1,
+        "lastDeployedById": 1,
+        "lastDeployedByName": 1,
+        "infraMappingType": 1,
+        "lastDeployedAt": 1,
+        "createdAt": 1,
+        "lastWorkflowExecutionId": 1,
+        "instanceInfo": 1,
+        "podInstanceKey": 1,
+        "pcfInstanceKey": 1,
+        "containerInstanceKey": 1,
+        "hostInstanceKey": 1
+      }
+    }
+  ],
+  "target_table": "instance",
+  "isSnapshot": false
+}

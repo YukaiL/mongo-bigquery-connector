@@ -1,0 +1,30 @@
+{
+  "source_table": "containerDeploymentInfo",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "createdAt": 1,
+        "containerSvcNameNoRevision": 1,
+        "containerSvcName": 1,
+        "lastVisited": 1,
+        "clusterName": 1,
+        "_id": 1,
+        "accountId": 1,
+        "infraMappingId": 1,
+        "workflowId": 1,
+        "stateExecutionInstanceId": 1,
+        "appId": 1,
+        "envId": 1,
+        "computeProviderId": 1,
+        "lastUpdatedAt": 1,
+        "instanceType": 1,
+        "workflowExecutionId": 1,
+        "serviceId": 1,
+        "pipelineExecutionId": 1
+      }
+    }
+  ],
+  "target_table": "containerDeploymentInfo",
+  "isSnapshot": true
+}

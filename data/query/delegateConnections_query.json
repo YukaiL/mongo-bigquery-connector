@@ -1,0 +1,20 @@
+{
+  "source_table": "delegateConnections",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "createdAt": 1,
+        "validUntil": 1,
+        "lastHeartbeat": 1,
+        "version": 1,
+        "lastUpdatedAt": 1,
+        "delegateId": 1,
+        "accountId": 1,
+        "_id": 1
+      }
+    }
+  ],
+  "target_table": "delegateConnections",
+  "isSnapshot": true
+}

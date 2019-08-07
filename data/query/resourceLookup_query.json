@@ -1,0 +1,20 @@
+{
+  "source_table": "resourceLookup",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "lastUpdatedAt": 1,
+        "createdAt": 1,
+        "resourceName": 1,
+        "resourceType": 1,
+        "resourceId": 1,
+        "appId": 1,
+        "accountId": 1,
+        "_id": 1
+      }
+    }
+  ],
+  "target_table": "resourceLookup",
+  "isSnapshot": true
+}

@@ -1,0 +1,33 @@
+{
+  "source_table": "accounts",
+  "query": [
+    {
+      "$project": {
+        "_id": 1,
+        "companyName": 1,
+        "delegateConfiguration.delegateVersions": 1,
+        "accountName": 1,
+        "emailSentToSales": 1,
+        "oauthEnabled": 1,
+        "lastLicenseExpiryReminderSentAt": 1,
+        "localEncryptionEnabled": 1,
+        "twoFactorAdminEnforced": 1,
+        "techStacks.technology": 1,
+        "techStacks.category": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1,
+        "lastUpdatedAt": 1,
+        "createdAt": 1,
+        "appId": 1,
+        "authenticationMechanism": 1,
+        "ingestionTime": 1
+      }
+    }
+  ],
+  "target_table": "accounts",
+  "isSnapshot": true
+}

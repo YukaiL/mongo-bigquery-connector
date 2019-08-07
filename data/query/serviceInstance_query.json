@@ -1,0 +1,45 @@
+{
+  "source_table": "serviceInstance",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "commandType": 1,
+        "lastActivityStatus": 1,
+        "publicDns": 1,
+        "hostId": 1,
+        "lastDeployedOn": 1,
+        "serviceName": 1,
+        "serviceId": 1,
+        "infraMappingId": 1,
+        "serviceTemplateName": 1,
+        "hostName": 1,
+        "lastActivityId": 1,
+        "serviceTemplate": 1,
+        "artifactStreamName": 1,
+        "artifactDeploymentActivityId": 1,
+        "envId": 1,
+        "appId": 1,
+        "artifactDeploymentStatus": 1,
+        "_id": 1,
+        "infraMappingType": 1,
+        "artifactName": 1,
+        "artifactStreamId": 1,
+        "artifactDeployedOn": 1,
+        "commandName": 1,
+        "lastActivityCreatedAt": 1,
+        "createdAt": 1,
+        "artifactId": 1,
+        "lastUpdatedAt": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "serviceInstance",
+  "isSnapshot": true
+}

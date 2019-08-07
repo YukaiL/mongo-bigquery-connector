@@ -1,0 +1,43 @@
+{
+  "source_table": "users",
+  "query": [
+    {
+      "$project": {
+        "ingestionTime": 1,
+        "oauthProvider": 1,
+        "twoFactorAuthenticationMechanism": 1,
+        "emailVerified": 1,
+        "lastLogin": 1,
+        "accounts": 1,
+        "appId": 1,
+        "passwordExpired": 1,
+        "passwordChangedAt": 1,
+        "statsFetchedOn": 1,
+        "totpSecretKey": 1,
+        "name": 1,
+        "_id": 1,
+        "email": 1,
+        "createdAt": 1,
+        "lastUpdatedAt": 1,
+        "passwordHash": 1,
+        "twoFactorAuthenticationEnabled": 1,
+        "roles": 1,
+        "userLockoutInfo.userLockedAt": 1,
+        "userLockoutInfo.numberOfFailedLoginAttempts": 1,
+        "userLocked": 1,
+        "marketoLeadId": 1,
+        "disabled": 1,
+        "reportedMarketoCampaigns": 1,
+        "defaultAccountId": 1,
+        "createdBy.uuid": 1,
+        "createdBy.name": 1,
+        "createdBy.email": 1,
+        "lastUpdatedBy.uuid": 1,
+        "lastUpdatedBy.name": 1,
+        "lastUpdatedBy.email": 1
+      }
+    }
+  ],
+  "target_table": "users",
+  "isSnapshot": true
+}
