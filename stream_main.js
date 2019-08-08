@@ -8,11 +8,29 @@ Before start, uncomment the following commands to generate a service account key
 see https://cloud.google.com/docs/authentication/production#obtaining_and_providing_service_account_credentials_manually
 */
 
+console.log(
+  '--------------------------DEBUGGING INFO--------------------------'
+)
+const GOOGLE_APPLICATION_CREDENTIALS =
+  process.env.GOOGLE_APPLICATION_CREDENTIALS
+const url = process.env.MONGO_URL
+const datasetId = process.env.BIGQUERY_DATASET
+console.log('Looking for GOOGLE_APPLICATION_CREDENTIALS key file path: ')
+console.log('found: ' + GOOGLE_APPLICATION_CREDENTIALS)
+console.log('Looking for datasetId: ')
+console.log('found: ' + datasetId)
+console.log(
+  '------------------------------------------------------------------'
+)
+
+//export dataset name to time.js helper file
+module.exports = {
+  datasetId
+}
+
 const path = require('path')
 const dataPath = './data'
 const bigquery = new BigQuery()
-const url = process.env.MONGO_QA_URL
-const datasetId = process.env.BIGQUERY_DATASET_ID
 const dataset = bigquery.dataset(datasetId)
 const MongoClient = require('mongodb').MongoClient
 const fs = require('fs')

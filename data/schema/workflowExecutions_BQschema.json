@@ -3,7 +3,12 @@
     "mode": "NULLABLE", 
     "name": "envName", 
     "type": "STRING"
-  }, 
+  },
+  {
+    "mode": "NULLABLE", 
+    "name": "accountId", 
+    "type": "STRING"
+  },  
   {
     "mode": "NULLABLE", 
     "name": "ingestionTime", 

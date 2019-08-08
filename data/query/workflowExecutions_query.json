@@ -3,6 +3,7 @@
   "query": [
     {
       "$project": {
+        "accountId": 1,
         "ingestionTime": 1,
         "envName": 1,
         "infraMappingIds": 1,

@@ -2,7 +2,8 @@
 //========
 const { BigQuery } = require('@google-cloud/bigquery')
 const bigquery = new BigQuery()
-const datasetID = process.env.BIGQUERY_DATASET_ID
+var datasetID = require('./stream_main.js').datasetId
+console.log('In time.js file, the datasetId: "' + datasetID + '" is passed in.')
 const timeTableID = 'ingestionTime'
 const localTimeFileID = 'lastUpdateTime.json'
 
