@@ -1,18 +1,24 @@
 //Functions concerning time logging and formatting
 //========
+const GOOGLE_APPLICATION_CREDENTIALS =
+  process.env.GOOGLE_APPLICATION_CREDENTIALS
 const { BigQuery } = require('@google-cloud/bigquery')
 const bigquery = new BigQuery()
 var datasetID = require('./stream_main.js').datasetId
 console.log('In time.js file, the datasetId: "' + datasetID + '" is passed in.')
 const timeTableID = 'ingestionTime'
 const localTimeFileID = 'lastUpdateTime.json'
+const cred = JSON.parse(fs.readFileSync(GOOGLE_APPLICATION_CREDENTIALS))
+const projectId = cred.project_id
 
 module.exports = {
   //Get the last ingestion time from BigQuery
   getLastUpdateTime: async function() {
     const query =
       `SELECT lastUpdateTime
-        FROM \`playground-243019.` +
+        FROM` +
+      projectId +
+      `.` +
       datasetID +
       `.` +
       timeTableID +

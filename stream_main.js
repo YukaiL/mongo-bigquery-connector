@@ -160,7 +160,6 @@ function streamData(queryFile) {
       }
       // Update query with time filter.
       query.push(queryNew)
-      console.log(query)
     }
     // Start streaming process.
     var strm = dbo
