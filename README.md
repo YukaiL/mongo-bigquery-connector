@@ -1,6 +1,6 @@
-# HarnessAnalytics
+# mongo-bigquery-connector
 
-HarnessAnalytics is an internal intern project at Harness. It consists of a scirpt which queries data from mongodb and streams it into Google BigQuery, and a custom dashboard generated from BigQuery data in Google Data Studio for analysis purpose.
+mongo-bigquery-connector is an internal intern project at Harness. It consists of a scirpt which queries data from mongodb and streams it into Google BigQuery, and a custom dashboard generated from BigQuery data in Google Data Studio for analysis purpose.
 
 ## Getting Started
 
@@ -16,12 +16,12 @@ The script will be run as a docker image. Necessary credentials need to be set a
 
 - Log into the Docker Hub from the command line by entering `docker login`, and then your Docker credentials
 
-- Pull the harnessanalytics image from Docker Hub
+- Pull the mongo-bigquery-connector image from Docker Hub
 
 - Run:
 
 ```
-docker run --env-file env.list -v /Users/yukailuo/HarnessAnalytics/data:/app/data harnessanalytics
+docker run --env-file env.list -v /Users/yukailuo/mongo-bigquery-connector/data:/app/data mongo-bigquery-connector
 ```
 
 ### Prerequisites: Running script on local machine
@@ -91,7 +91,7 @@ Run
 $ npm install --save @google-cloud/bigquery
 $ npm install --save mongodb
 ```
- 
+
 ### 5. Running the script
 
 Run:
