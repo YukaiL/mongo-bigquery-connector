@@ -52,7 +52,9 @@ ifDatasetExists(dataset)
   .then(() => time.getLastUpdateTime())
   .then(recordLastUpdateTime)
   .then(() =>
-    MongoClient.connect(url, { useNewUrlParser: true }, { slaveOk: true })
+    MongoClient.connect(url, {
+      useNewUrlParser: true
+    })
   )
   .then(getDataBase)
   .then(() => enumerate(dataPath + path.sep + 'query'))
@@ -218,10 +220,6 @@ function streamData(queryFile) {
       .stream()
     strm.on('data', batch => {
       // get rid of collection sourceTable at the end.
-      //DEBUG:
-      console.log('This is the data streaming: ')
-      console.log(batch)
-      console.log('--------------------------------------------------------')
       if (batch != sourceTable) {
         // check for illegal keys
         trans.stringPack(sourceTable, batch)
