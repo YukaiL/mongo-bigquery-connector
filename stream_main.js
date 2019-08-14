@@ -46,10 +46,16 @@ var timeNow = Date.now()
 //Save the record locally.
 fs.writeFileSync('lastUpdateTime.json', '{"lastUpdateTime": ' + timeNow + '}')
 
+function testprint() {
+  console.log(lastUpdateTime)
+}
+
 // Main
-time
-  .getLastUpdateTime()
+ifDatasetExists(dataset)
+  .then(getDataset)
+  .then(() => time.getLastUpdateTime())
   .then(recordLastUpdateTime)
+  .then(() => testprint())
   .then(() => MongoClient.connect(url, { useNewUrlParser: true }))
   .then(getDataBase)
   .then(() => enumerate(dataPath + path.sep + 'query'))
@@ -57,6 +63,53 @@ time
   .then(() => time.update())
   .then(() => db.close())
   .catch(error => console.log(error))
+
+// Return true if the dataset exists.
+function ifDatasetExists(dataset) {
+  return dataset.exists()
+}
+
+// If dataset exists, do nothing. Else, create the dataset.
+async function getDataset(existsArr) {
+  var exists = existsArr[0]
+  if (!exists) {
+    await createDataset(dataset)
+  } else {
+    console.log('Start updating ' + dataset.id + ' dataset.')
+  }
+}
+
+// Creates a new dataset named "datasetId".
+async function createDataset(dataset) {
+  // Specify the geographic location where the dataset should reside
+  const datasetOptions = {
+    location: 'US'
+  }
+
+  // Create a new dataset
+  await bigquery.createDataset(dataset.id, datasetOptions)
+  console.log(dataset.id + ' dataset created.')
+
+  // Create ingestionTime table
+  var tableId = 'ingestionTime'
+  var ingestionTimeSchema = [
+    { name: 'lastUpdateTime', type: 'INTEGER', mode: 'NULLABLE' }
+  ]
+
+  const ingestionTimeOptions = {
+    schema: ingestionTimeSchema,
+    location: 'US'
+  }
+
+  await dataset.createTable(tableId, ingestionTimeOptions)
+
+  // Initialize ingestionTime table
+  const row = [{ lastUpdateTime: 1565737210134 }]
+
+  // Insert data into a table
+  await dataset.table(tableId).insert(row)
+  console.log(`ingestionTime table initialized`)
+}
 
 // Initiate database.
 function getDataBase(database) {
@@ -82,7 +135,7 @@ function enumerate(dir) {
 async function loopCollections(colls) {
   for (var i = 0; i < colls.length; i++) {
     var queryFile = JSON.parse(fs.readFileSync(colls[i]))
-    await ifExists(queryFile)
+    await ifTableExists(queryFile)
       .then(exists => getTable(exists, queryFile))
       .then(() => streamData(queryFile))
       .then(() => sleep(2000))
@@ -91,7 +144,7 @@ async function loopCollections(colls) {
 }
 
 // Return true if the table exists.
-function ifExists(queryFile) {
+function ifTableExists(queryFile) {
   return new Promise((res, rej) => {
     var tableName = queryFile.target_table
     var table = dataset.table(tableName)
