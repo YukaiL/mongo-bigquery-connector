@@ -1,5 +1,6 @@
 //Functions concerning time logging and formatting
 //========
+const fs = require('fs')
 const GOOGLE_APPLICATION_CREDENTIALS =
   process.env.GOOGLE_APPLICATION_CREDENTIALS
 const { BigQuery } = require('@google-cloud/bigquery')
@@ -17,6 +18,7 @@ module.exports = {
     const query =
       `SELECT lastUpdateTime
         FROM` +
+      `\`` +
       projectId +
       `.` +
       datasetID +
