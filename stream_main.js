@@ -46,16 +46,11 @@ var timeNow = Date.now()
 //Save the record locally.
 fs.writeFileSync('lastUpdateTime.json', '{"lastUpdateTime": ' + timeNow + '}')
 
-function testprint() {
-  console.log(lastUpdateTime)
-}
-
 // Main
 ifDatasetExists(dataset)
   .then(getDataset)
   .then(() => time.getLastUpdateTime())
   .then(recordLastUpdateTime)
-  .then(() => testprint())
   .then(() => MongoClient.connect(url, { useNewUrlParser: true }))
   .then(getDataBase)
   .then(() => enumerate(dataPath + path.sep + 'query'))
@@ -104,7 +99,7 @@ async function createDataset(dataset) {
   await dataset.createTable(tableId, ingestionTimeOptions)
 
   // Initialize ingestionTime table
-  const row = [{ lastUpdateTime: 1565737210134 }]
+  const row = [{ lastUpdateTime: 0 }]
 
   // Insert data into a table
   await dataset.table(tableId).insert(row)

@@ -93,132 +93,101 @@ module.exports = {
 
 // collection: pipelines
 function pipelinesTrans(batch) {
-  var temp = JSON.stringify(batch.stateEtaMap)
-  batch.stateEtaMap = temp
+  batch.stateEtaMap = JSON.stringify(batch.stateEtaMap)
 }
 // collection: workflowExecutions
 function workflowExecutionsTrans(batch) {
-  var temp = JSON.stringify(batch.stateMachine)
-  batch.stateMachine = temp
-  var temp2 = JSON.stringify(batch.executionArgs)
-  batch.executionArgs = temp2
-  var temp3 = JSON.stringify(batch.pipelineExecution)
-  batch.pipelineExecution = temp3
-  var temp4 = JSON.stringify(batch.artifacts)
-  batch.artifacts = temp4
-  var temp5 = JSON.stringify(batch.serviceExecutionSummaries)
-  batch.serviceExecutionSummaries = temp5
-  var temp6 = JSON.stringify(batch.cloudProviderIds)
-  batch.cloudProviderIds = temp6
-  var temp7 = JSON.stringify(batch.workflowIds)
-  batch.workflowIds = temp7
+  batch.stateMachine = JSON.stringify(batch.stateMachine)
+  batch.executionArgs = JSON.stringify(batch.executionArgs)
+  batch.pipelineExecution = JSON.stringify(batch.pipelineExecution)
+  batch.artifacts = JSON.stringify(batch.artifacts)
+  batch.serviceExecutionSummaries = JSON.stringify(
+    batch.serviceExecutionSummaries
+  )
+  batch.cloudProviderIds = JSON.stringify(batch.cloudProviderIds)
+  batch.workflowIds = JSON.stringify(batch.workflowIds)
 }
 // collection:  pipelineExecution
 function pipelineExecutionTrans(batch) {
-  var temp = JSON.stringify(batch.pipelineStageExecutions)
-  batch.pipelineStageExecutions = temp
-  var temp1 = JSON.stringify(batch.pipeline)
-  batch.pipeline = temp1
+  batch.pipelineStageExecutions = JSON.stringify(batch.pipelineStageExecutions)
+  batch.pipeline = JSON.stringify(batch.pipeline)
   if (batch.hasOwnProperty('executionArgs')) {
-    var temp2 = JSON.stringify(batch.executionArgs)
-    batch.executionArgs = temp2
+    batch.executionArgs = JSON.stringify(batch.executionArgs)
   }
   if (batch.hasOwnProperty('cloudProviderIds')) {
-    var temp3 = JSON.stringify(batch.cloudProviderIds)
-    batch.cloudProviderIds = temp3
+    batch.cloudProviderIds = JSON.stringify(batch.cloudProviderIds)
   }
 }
 
 // collection: commands
 function commandsTrans(batch) {
   if (batch.hasOwnProperty('templateVariables')) {
-    var temp = JSON.stringify(batch.templateVariables)
-    batch.templateVariables = temp
+    batch.templateVariables = JSON.stringify(batch.templateVariables)
   }
   if (batch.hasOwnProperty('commandUnits')) {
-    var temp = JSON.stringify(batch.commandUnits)
-    batch.commandUnits = temp
+    batch.commandUnits = JSON.stringify(batch.commandUnits)
   }
 }
 
 // collection: services
 function servicesTrans(batch) {
-  var temp = JSON.stringify(batch.appContainer)
-  batch.appContainer = temp
-  var temp2 = JSON.stringify(batch.artifactStreamIds)
-  batch.artifactStreamIds = temp2
+  batch.appContainer = JSON.stringify(batch.appContainer)
+  batch.artifactStreamIds = JSON.stringify(batch.artifactStreamIds)
 }
 
 // collection: stateMachines
 function stateMachinesTrans(batch) {
-  var childStateM = JSON.stringify(batch.childStateMachines)
-  var orchestration = JSON.stringify(batch.orchestrationWorkflow)
-  batch.childStateMachines = childStateM
-  batch.orchestrationWorkflow = orchestration
+  batch.childStateMachines = JSON.stringify(batch.childStateMachines)
+  batch.orchestrationWorkflow = JSON.stringify(batch.orchestrationWorkflow)
   if (batch.hasOwnProperty('states')) {
-    var temp1 = JSON.stringify(batch.states)
-    batch.states = temp1
+    batch.states = JSON.stringify(batch.states)
   }
   if (batch.hasOwnProperty('transitions')) {
-    var temp2 = JSON.stringify(batch.transitions)
-    batch.transitions = temp2
+    batch.transitions = JSON.stringify(batch.transitions)
   }
 }
 
 // collection: workflows
 function workflowsTrans(batch) {
-  var temp1 = JSON.stringify(batch.orchestration)
-  batch.orchestration = temp1
-  var temp2 = JSON.stringify(batch.linkedTemplateUuids)
-  batch.linkedTemplateUuids = temp2
-  var temp3 = JSON.stringify(batch.templateExpressions)
-  batch.templateExpressions = temp3
+  batch.orchestration = JSON.stringify(batch.orchestration)
+  batch.linkedTemplateUuids = JSON.stringify(batch.linkedTemplateUuids)
+  batch.templateExpressions = JSON.stringify(batch.templateExpressions)
 }
 
 // collection: settingAttributes
 function settingAttributesTrans(batch) {
   if (batch.hasOwnProperty('usageRestrictions')) {
-    var temp1 = JSON.stringify(batch.usageRestrictions)
-    batch.usageRestrictions = temp1
+    batch.usageRestrictions = JSON.stringify(batch.usageRestrictions)
   }
-
   if (batch.hasOwnProperty('value')) {
-    var temp2 = JSON.stringify(batch.value)
-    batch.value = temp2
+    batch.value = JSON.stringify(batch.value)
   }
 }
 
 // collection: serviceCommands
 function serviceCommandsTrans(batch) {
-  var temp1 = JSON.stringify(batch.envIdVersionMap)
-  batch.envIdVersionMap = temp1
+  batch.envIdVersionMap = JSON.stringify(batch.envIdVersionMap)
 }
 
 // collection: infrastructureMapping
 function infrastructureMappingTrans(batch) {
   if (batch.hasOwnProperty('securityGroupIds')) {
-    var temp1 = JSON.stringify(batch.securityGroupIds)
-    batch.securityGroupIds = temp1
+    batch.securityGroupIds = JSON.stringify(batch.securityGroupIds)
   }
   if (batch.hasOwnProperty('hosts')) {
-    var temp2 = JSON.stringify(batch.hosts)
-    batch.hosts = temp2
+    batch.hosts = JSON.stringify(batch.hosts)
   }
   if (batch.hasOwnProperty('subnetIds')) {
-    var temp3 = JSON.stringify(batch.subnetIds)
-    batch.subnetIds = temp3
+    batch.subnetIds = JSON.stringify(batch.subnetIds)
   }
   if (batch.hasOwnProperty('stageTargetGroupArns')) {
-    var temp4 = JSON.stringify(batch.stageTargetGroupArns)
-    batch.stageTargetGroupArns = temp4
+    batch.stageTargetGroupArns = JSON.stringify(batch.stageTargetGroupArns)
   }
   if (batch.hasOwnProperty('targetGroupArns')) {
-    var temp5 = JSON.stringify(batch.targetGroupArns)
-    batch.targetGroupArns = temp5
+    batch.targetGroupArns = JSON.stringify(batch.targetGroupArns)
   }
   if (batch.hasOwnProperty('tempRouteMap')) {
-    var temp6 = JSON.stringify(batch.tempRouteMap)
-    batch.tempRouteMap = temp6
+    batch.tempRouteMap = JSON.stringify(batch.tempRouteMap)
   }
   if (batch.hasOwnProperty('routeMaps')) {
     if (batch.routeMaps === null) {
@@ -226,275 +195,233 @@ function infrastructureMappingTrans(batch) {
     }
   }
   if (batch.hasOwnProperty('stageClassicLoadBalancers')) {
-    var temp7 = JSON.stringify(batch.stageClassicLoadBalancers)
-    batch.stageClassicLoadBalancers = temp7
+    batch.stageClassicLoadBalancers = JSON.stringify(
+      batch.stageClassicLoadBalancers
+    )
   }
   if (batch.hasOwnProperty('classicLoadBalancers')) {
-    var temp8 = JSON.stringify(batch.classicLoadBalancers)
-    batch.classicLoadBalancers = temp8
+    batch.classicLoadBalancers = JSON.stringify(batch.classicLoadBalancers)
   }
 }
 
 // collection: artifactStream
 function artifactStreamTrans(batch) {
   if (batch.hasOwnProperty('keywords')) {
-    var temp1 = JSON.stringify(batch.keywords)
-    batch.keywords = temp1
+    batch.keywords = JSON.stringify(batch.keywords)
   }
   if (batch.hasOwnProperty('filters')) {
-    var temp1 = JSON.stringify(batch.filters)
-    batch.filters = temp1
+    batch.filters = JSON.stringify(batch.filters)
   }
   if (batch.hasOwnProperty('tags')) {
-    var temp1 = JSON.stringify(batch.tags)
-    batch.tags = temp1
+    batch.tags = JSON.stringify(batch.tags)
   }
   if (batch.hasOwnProperty('templateVariables')) {
-    var temp1 = JSON.stringify(batch.templateVariables)
-    batch.templateVariables = temp1
+    batch.templateVariables = JSON.stringify(batch.templateVariables)
   }
   if (batch.hasOwnProperty('scripts')) {
-    var temp1 = JSON.stringify(batch.scripts)
-    batch.scripts = temp1
+    batch.scripts = JSON.stringify(batch.scripts)
   }
 }
 
 // collection: environments
 function environmentsTrans(batch) {
   if (batch.hasOwnProperty('helmValueYamlByServiceTemplateId')) {
-    var temp1 = JSON.stringify(batch.helmValueYamlByServiceTemplateId)
-    batch.helmValueYamlByServiceTemplateId = temp1
+    batch.helmValueYamlByServiceTemplateId = JSON.stringify(
+      batch.helmValueYamlByServiceTemplateId
+    )
   }
   if (batch.hasOwnProperty('configMapYamlByServiceTemplateId')) {
-    var temp2 = JSON.stringify(batch.configMapYamlByServiceTemplateId)
-    batch.configMapYamlByServiceTemplateId = temp2
+    batch.configMapYamlByServiceTemplateId = JSON.stringify(
+      batch.configMapYamlByServiceTemplateId
+    )
   }
 }
 
 // collection: notificationGroups
 function notificationGroupsTrans(batch) {
   if (batch.hasOwnProperty('addressesByChannelType')) {
-    var temp1 = JSON.stringify(batch.addressesByChannelType)
-    batch.addressesByChannelType = temp1
+    batch.addressesByChannelType = JSON.stringify(batch.addressesByChannelType)
   }
   if (batch.hasOwnProperty('configMapYamlByServiceTemplateId')) {
-    var temp2 = JSON.stringify(batch.configMapYamlByServiceTemplateId)
-    batch.configMapYamlByServiceTemplateId = temp2
+    batch.configMapYamlByServiceTemplateId = JSON.stringify(
+      batch.configMapYamlByServiceTemplateId
+    )
   }
 }
 
 // collection: deploymentSummary
 function deploymentSummaryTrans(batch) {
-  var temp1 = JSON.stringify(batch.deploymentInfo)
-  batch.deploymentInfo = temp1
+  batch.deploymentInfo = JSON.stringify(batch.deploymentInfo)
 }
 
 // collection: pipelines
 function pipelinesTrans(batch) {
-  var temp1 = JSON.stringify(batch.pipelineStages)
-  batch.pipelineStages = temp1
+  batch.pipelineStages = JSON.stringify(batch.pipelineStages)
   if (batch.hasOwnProperty('failureStrategies')) {
-    var temp2 = JSON.stringify(batch.failureStrategies)
-    batch.failureStrategies = temp2
+    batch.failureStrategies = JSON.stringify(batch.failureStrategies)
   }
   if (batch.hasOwnProperty('stateEtaMap')) {
-    var temp2 = JSON.stringify(batch.stateEtaMap)
-    batch.stateEtaMap = temp2
+    batch.stateEtaMap = JSON.stringify(batch.stateEtaMap)
   }
 }
 
 // collection: triggers
 function triggersTrans(batch) {
-  var temp1 = JSON.stringify(batch.artifactSelections)
-  batch.artifactSelections = temp1
-  var temp2 = JSON.stringify(batch.condition)
-  batch.condition = temp2
+  batch.artifactSelections = JSON.stringify(batch.artifactSelections)
+  batch.condition = JSON.stringify(batch.condition)
   if (batch.hasOwnProperty('failureStrategies')) {
-    var temp3 = JSON.stringify(batch.failureStrategies)
-    batch.failureStrategies = temp3
+    batch.failureStrategies = JSON.stringify(batch.failureStrategies)
   }
   if (batch.hasOwnProperty('stateEtaMap')) {
-    var temp4 = JSON.stringify(batch.stateEtaMap)
-    batch.stateEtaMap = temp4
+    batch.stateEtaMap = JSON.stringify(batch.stateEtaMap)
   }
   if (batch.hasOwnProperty('workflowVariables')) {
-    var temp5 = JSON.stringify(batch.workflowVariables)
-    batch.workflowVariables = temp5
+    batch.workflowVariables = JSON.stringify(batch.workflowVariables)
   }
 }
 
 // collection: userGroups
 function userGroupsTrans(batch) {
   if (batch.hasOwnProperty('memberIds')) {
-    var temp1 = JSON.stringify(batch.memberIds)
-    batch.memberIds = temp1
+    batch.memberIds = JSON.stringify(batch.memberIds)
   }
   if (batch.hasOwnProperty('appPermissions')) {
-    var temp2 = JSON.stringify(batch.appPermissions)
-    batch.appPermissions = temp2
+    batch.appPermissions = JSON.stringify(batch.appPermissions)
   }
 }
 
 // collection: delegateScopes
 function delegateScopesTrans(batch) {
   if (batch.hasOwnProperty('serviceInfrastructures')) {
-    var temp1 = JSON.stringify(batch.serviceInfrastructures)
-    batch.serviceInfrastructures = temp1
+    batch.serviceInfrastructures = JSON.stringify(batch.serviceInfrastructures)
   }
   if (batch.hasOwnProperty('environments')) {
-    var temp2 = JSON.stringify(batch.environments)
-    batch.environments = temp2
+    batch.environments = JSON.stringify(batch.environments)
   }
   if (batch.hasOwnProperty('environmentTypes')) {
-    var temp3 = JSON.stringify(batch.environmentTypes)
-    batch.environmentTypes = temp3
+    batch.environmentTypes = JSON.stringify(batch.environmentTypes)
   }
   if (batch.hasOwnProperty('taskTypes')) {
-    var temp4 = JSON.stringify(batch.taskTypes)
-    batch.taskTypes = temp4
+    batch.taskTypes = JSON.stringify(batch.taskTypes)
   }
   if (batch.hasOwnProperty('applications')) {
-    var temp5 = JSON.stringify(batch.applications)
-    batch.applications = temp5
+    batch.applications = JSON.stringify(batch.applications)
   }
 }
 
 // collection: hosts
 function hostsTrans(batch) {
-  var temp = JSON.stringify(batch.instance)
-  batch.instance = temp
+  batch.instance = JSON.stringify(batch.instance)
   if (batch.hasOwnProperty('ec2Instance')) {
-    var temp1 = JSON.stringify(batch.ec2Instance)
-    batch.ec2Instance = temp1
+    batch.ec2Instance = JSON.stringify(batch.ec2Instance)
   }
   if (batch.hasOwnProperty('properties')) {
-    var temp2 = JSON.stringify(batch.properties)
-    batch.properties = temp2
+    batch.properties = JSON.stringify(batch.properties)
   }
 }
 
 // collection: instance
 function instanceTrans(batch) {
   if (batch.hasOwnProperty('instanceInfo')) {
-    var temp1 = JSON.stringify(batch.instanceInfo)
-    batch.instanceInfo = temp1
+    batch.instanceInfo = JSON.stringify(batch.instanceInfo)
   }
   if (batch.hasOwnProperty('podInstanceKey')) {
-    var temp2 = JSON.stringify(batch.podInstanceKey)
-    batch.podInstanceKey = temp2
+    batch.podInstanceKey = JSON.stringify(batch.podInstanceKey)
   }
   if (batch.hasOwnProperty('pcfInstanceKey')) {
-    var temp3 = JSON.stringify(batch.pcfInstanceKey)
-    batch.pcfInstanceKey = temp3
+    batch.pcfInstanceKey = JSON.stringify(batch.pcfInstanceKey)
   }
   if (batch.hasOwnProperty('containerInstanceKey')) {
-    var temp4 = JSON.stringify(batch.containerInstanceKey)
-    batch.containerInstanceKey = temp4
+    batch.containerInstanceKey = JSON.stringify(batch.containerInstanceKey)
   }
   if (batch.hasOwnProperty('hostInstanceKey')) {
-    var temp4 = JSON.stringify(batch.hostInstanceKey)
-    batch.hostInstanceKey = temp4
+    batch.hostInstanceKey = JSON.stringify(batch.hostInstanceKey)
   }
 }
 
 // collection: audits
 function auditsTrans(batch) {
   if (batch.hasOwnProperty('remoteUser')) {
-    var temp1 = JSON.stringify(batch.remoteUser)
-    batch.remoteUser = temp1
+    batch.remoteUser = JSON.stringify(batch.remoteUser)
   }
   if (batch.hasOwnProperty('entityAuditRecords')) {
-    var temp2 = JSON.stringify(batch.entityAuditRecords)
-    batch.entityAuditRecords = temp2
+    batch.entityAuditRecords = JSON.stringify(batch.entityAuditRecords)
   }
   if (batch.hasOwnProperty('gitAuditDetails')) {
-    var temp3 = JSON.stringify(batch.gitAuditDetails)
-    batch.gitAuditDetails = temp3
+    batch.gitAuditDetails = JSON.stringify(batch.gitAuditDetails)
   }
 }
 
 // collection: artifacts
 function artifactsTrans(batch) {
   if (batch.hasOwnProperty('metadata')) {
-    var temp1 = JSON.stringify(batch.metadata)
-    batch.metadata = temp1
+    batch.metadata = JSON.stringify(batch.metadata)
   }
   if (batch.hasOwnProperty('artifactFiles')) {
-    var temp2 = JSON.stringify(batch.artifactFiles)
-    batch.artifactFiles = temp2
+    batch.artifactFiles = JSON.stringify(batch.artifactFiles)
   }
 }
 
 // collection: stateExecutionInstances
 function stateExecutionInstancesTrans(batch) {
   if (batch.hasOwnProperty('contextElements')) {
-    var temp1 = JSON.stringify(batch.contextElements)
-    batch.contextElements = temp1
+    batch.contextElements = JSON.stringify(batch.contextElements)
   }
   if (batch.hasOwnProperty('contextElement')) {
-    var temp2 = JSON.stringify(batch.contextElement)
-    batch.contextElement = temp2
+    batch.contextElement = JSON.stringify(batch.contextElement)
   }
   if (batch.hasOwnProperty('stateExecutionMap')) {
-    var temp3 = JSON.stringify(batch.stateExecutionMap)
-    batch.stateExecutionMap = temp3
+    batch.stateExecutionMap = JSON.stringify(batch.stateExecutionMap)
   }
   if (batch.hasOwnProperty('notifyElements')) {
-    var temp4 = JSON.stringify(batch.notifyElements)
-    batch.notifyElements = temp4
+    batch.notifyElements = JSON.stringify(batch.notifyElements)
   }
   if (batch.hasOwnProperty('interruptHistory')) {
-    var temp5 = JSON.stringify(batch.interruptHistory)
-    batch.interruptHistory = temp5
+    batch.interruptHistory = JSON.stringify(batch.interruptHistory)
   }
   if (batch.hasOwnProperty('stateExecutionDataHistory')) {
-    var temp6 = JSON.stringify(batch.stateExecutionDataHistory)
-    batch.stateExecutionDataHistory = temp6
+    batch.stateExecutionDataHistory = JSON.stringify(
+      batch.stateExecutionDataHistory
+    )
   }
   if (batch.hasOwnProperty('stateParams')) {
-    var temp7 = JSON.stringify(batch.stateParams)
-    batch.stateParams = temp7
+    batch.stateParams = JSON.stringify(batch.stateParams)
   }
   if (batch.hasOwnProperty('executionEventAdvisors')) {
-    var temp8 = JSON.stringify(batch.executionEventAdvisors)
-    batch.executionEventAdvisors = temp8
+    batch.executionEventAdvisors = JSON.stringify(batch.executionEventAdvisors)
   }
 }
 
 // collection: activities
 function activitiesTrans(batch) {
-  var temp1 = JSON.stringify(batch.commandUnits)
-  batch.commandUnits = temp1
+  batch.commandUnits = JSON.stringify(batch.commandUnits)
 }
 
 // collection: containerTasks
 function containerTasksTrans(batch) {
   if (batch.hasOwnProperty('containerDefinitions')) {
-    var temp1 = JSON.stringify(batch.containerDefinitions)
-    batch.containerDefinitions = temp1
+    batch.containerDefinitions = JSON.stringify(batch.containerDefinitions)
   }
 }
 
 // collection: lambdaSpecifications
 function lambdaSpecificationsTrans(batch) {
-  var temp = JSON.stringify(batch.functions)
-  batch.functions = temp
+  batch.functions = JSON.stringify(batch.functions)
   if (batch.hasOwnProperty('defaults')) {
-    var temp1 = JSON.stringify(batch.defaults)
-    batch.defaults = temp1
+    batch.defaults = JSON.stringify(batch.defaults)
   }
 }
 
 // collection: notifications
 function notificationsTrans(batch) {
   if (batch.hasOwnProperty('notificationTemplateVariables')) {
-    var temp1 = JSON.stringify(batch.notificationTemplateVariables)
-    batch.notificationTemplateVariables = temp1
+    batch.notificationTemplateVariables = JSON.stringify(
+      batch.notificationTemplateVariables
+    )
   }
 }
 
 // collection: terraformConfig
 function terraformConfigTrans(batch) {
-  var temp = JSON.stringify(batch.variables)
-  batch.variables = temp
+  batch.variables = JSON.stringify(batch.variables)
 }
