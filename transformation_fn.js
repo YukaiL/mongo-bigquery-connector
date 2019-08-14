@@ -5,60 +5,88 @@
 
 module.exports = {
   stringPack: function(tableID, batch) {
-    if (tableID === 'commands') {
-      commandsTrans(batch)
-    } else if (tableID === 'pipelineExecutions') {
-      pipelineExecutionTrans(batch)
-    } else if (tableID === 'workflowExecutions') {
-      workflowExecutionsTrans(batch)
-    } else if (tableID === 'stateExecutionInstances') {
-      stateExecutionInstancesTrans(batch)
-    } else if (tableID === 'services') {
-      servicesTrans(batch)
-    } else if (tableID === 'stateMachines') {
-      stateMachinesTrans(batch)
-    } else if (tableID === 'workflows') {
-      workflowsTrans(batch)
-    } else if (tableID === 'settingAttributes') {
-      settingAttributesTrans(batch)
-    } else if (tableID === 'serviceCommands') {
-      serviceCommandsTrans(batch)
-    } else if (tableID === 'infrastructureMapping') {
-      infrastructureMappingTrans(batch)
-    } else if (tableID === 'artifactStream') {
-      artifactStreamTrans(batch)
-    } else if (tableID === 'environments') {
-      environmentsTrans(batch)
-    } else if (tableID === 'notificationGroups') {
-      notificationGroupsTrans(batch)
-    } else if (tableID === 'deploymentSummary') {
-      deploymentSummaryTrans(batch)
-    } else if (tableID === 'pipelines') {
-      pipelinesTrans(batch)
-    } else if (tableID === 'triggers') {
-      triggersTrans(batch)
-    } else if (tableID === 'userGroups') {
-      userGroupsTrans(batch)
-    } else if (tableID === 'delegateScopes') {
-      delegateScopesTrans(batch)
-    } else if (tableID === 'hosts') {
-      hostsTrans(batch)
-    } else if (tableID === 'instance') {
-      instanceTrans(batch)
-    } else if (tableID === 'audits') {
-      auditsTrans(batch)
-    } else if (tableID === 'artifacts') {
-      artifactsTrans(batch)
-    } else if (tableID === 'activities') {
-      activitiesTrans(batch)
-    } else if (tableID === 'containerTasks') {
-      containerTasksTrans(batch)
-    } else if (tableID === 'lambdaSpecifications') {
-      lambdaSpecificationsTrans(batch)
-    } else if (tableID === 'notifications') {
-      notificationsTrans(batch)
-    } else if (tableID === 'terraformConfig') {
-      terraformConfigTrans(batch)
+    switch (tableID) {
+      case 'commands':
+        commandsTrans(batch)
+        break
+      case 'pipelineExecutions':
+        pipelineExecutionTrans(batch)
+        break
+      case 'workflowExecutions':
+        workflowExecutionsTrans(batch)
+        break
+      case 'stateExecutionInstances':
+        stateExecutionInstancesTrans(batch)
+        break
+      case 'services':
+        servicesTrans(batch)
+        break
+      case 'stateMachines':
+        stateMachinesTrans(batch)
+        break
+      case 'workflows':
+        workflowsTrans(batch)
+        break
+      case 'settingAttributes':
+        settingAttributesTrans(batch)
+        break
+      case 'serviceCommands':
+        serviceCommandsTrans(batch)
+        break
+      case 'infrastructureMapping':
+        infrastructureMappingTrans(batch)
+        break
+      case 'artifactStream':
+        artifactStreamTrans(batch)
+        break
+      case 'environments':
+        environmentsTrans(batch)
+        break
+      case 'notificationGroups':
+        notificationGroupsTrans(batch)
+        break
+      case 'deploymentSummary':
+        deploymentSummaryTrans(batch)
+        break
+      case 'pipelines':
+        pipelinesTrans(batch)
+        break
+      case 'triggers':
+        triggersTrans(batch)
+        break
+      case 'userGroups':
+        userGroupsTrans(batch)
+        break
+      case 'delegateScopes':
+        delegateScopesTrans(batch)
+        break
+      case 'hosts':
+        hostsTrans(batch)
+        break
+      case 'instance':
+        instanceTrans(batch)
+        break
+      case 'audits':
+        auditsTrans(batch)
+        break
+      case 'artifacts':
+        artifactsTrans(batch)
+        break
+      case 'activities':
+        activitiesTrans(batch)
+        break
+      case 'containerTasks':
+        containerTasksTrans(batch)
+        break
+      case 'lambdaSpecifications':
+        lambdaSpecificationsTrans(batch)
+        break
+      case 'notifications':
+        notificationsTrans(batch)
+        break
+      case 'terraformConfig':
+        terraformConfigTrans(batch)
+        break
     }
   }
 }
