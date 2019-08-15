@@ -60,6 +60,9 @@ module.exports = {
       case 'delegateScopes':
         delegateScopesTrans(batch)
         break
+      case 'delegates':
+        delegatesTrans(batch)
+        break
       case 'hosts':
         hostsTrans(batch)
         break
@@ -87,6 +90,15 @@ module.exports = {
       case 'terraformConfig':
         terraformConfigTrans(batch)
         break
+    }
+  }
+}
+
+// collection: delegates
+function delegatesTrans(batch) {
+  if (batch.hasOwnProperty('tags')) {
+    if (batch.tags === null) {
+      batch.tags = ['null']
     }
   }
 }

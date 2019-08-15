@@ -103,7 +103,8 @@ async function createDataset(dataset) {
   await dataset.createTable(tableId, ingestionTimeOptions)
 
   // Initialize ingestionTime table
-  const row = [{ lastUpdateTime: 0 }]
+  // Get data from past 24 hours.
+  const row = [{ lastUpdateTime: timeNow - 86400000 }]
 
   // Insert data into a table
   await dataset.table(tableId).insert(row)
@@ -244,6 +245,7 @@ async function insertRowsAsStream(tableID, rows) {
     .insert([rows])
     .catch(error => {
       // For debugging purpose
+      console.log('Error occurs when streaming ' + tableID + ' data.')
       if (error.name === 'PartialFailureError') {
         console.log('----------------------ERROR------------------------')
         // console.log(error)
@@ -255,11 +257,12 @@ async function insertRowsAsStream(tableID, rows) {
         console.log(error.response.insertErrors[0].errors)
         console.log(error.errors[0].row._id)
         console.log('----------------------------------------------')
-        // throw error;
       } else {
-        console.log('Error occurs when streaming ' + tableID + ' data.')
         console.log('----------------------ERROR------------------------')
-        throw error
+        console.log('Timestamp is: ' + Date.now())
+        console.log('Error name is: ' + error.name)
+        console.log(error.stack)
+        console.log(error)
       }
     })
 }
