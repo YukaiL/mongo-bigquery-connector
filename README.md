@@ -1,24 +1,45 @@
 # mongo-bigquery-connector
 
-mongo-bigquery-connector is an internal intern project at Harness. It consists of a scirpt which queries data from mongodb and streams it into Google BigQuery, and a custom dashboard generated from BigQuery data in Google Data Studio for analysis purpose.
+mongo-bigquery-connector is an internal intern project at Harness. It consists of a connector which queries data from mongodb and streams it into Google BigQuery, and dashboards generated from BigQuery data in Google Data Studio for visualization and analysis purpose.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development or testing purposes.
 
-The script will be run as a docker image. Necessary credentials need to be set as environment variables for it to run successfully. You also need to get `query` and `schema` files from this Github repository. You can manually add `query` and `schema` if you want to make customized search and table.
+The script will be run as a docker image. Necessary credentials are need for it to run successfully.
 
 ### Prerequisites: Running the script in Docker container
+
+#### 1. Credentials
+
+##### 1.1. Google credentials
+
+- Follow [Google authentication instruction](https://cloud.google.com/docs/authentication/getting-started) to create a service account key.
+
+- Save the key JSON file locally.
+
+##### 1.2. Mongodb url
+
+Go to the [Vault](https://vault-internal.harness.io:8200/ui/vault/secrets?with=okta) and get:
+ `db_address`
+ `db_database`
+ `db_port`
+ `db_read_password`
+ `db_read_user`
 
 #### 1. Docker
 
 - Install [Docker](https://docs.docker.com/install/) for your OS.
 
-- Log into the Docker Hub from the command line by entering `docker login`, and then your Docker credentials
+- Log into the Docker Hub from the command line by entering `docker login`, and then your credentials for Harness account.
 
-- Pull the mongo-bigquery-connector image from Docker Hub
+- Pull the mongo-bigquery-connector image from Docker Hub:
 
-- Run:
+```
+docker pull us.gcr.io/platform-205701/harness/mongo-bigquery-connector
+```
+
+- Run the image:
 
 ```
 docker run --env-file env.list -v /Users/yukailuo/mongo-bigquery-connector/data:/app/data mongo-bigquery-connector

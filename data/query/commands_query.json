@@ -24,7 +24,9 @@
         "createdBy.email": 1,
         "lastUpdatedBy.uuid": 1,
         "lastUpdatedBy.name": 1,
-        "lastUpdatedBy.email": 1
+        "lastUpdatedBy.email": 1,
+        "graph" : 1
+
       }
     }
   ],

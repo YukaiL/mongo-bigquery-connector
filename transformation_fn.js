@@ -139,6 +139,10 @@ function commandsTrans(batch) {
   if (batch.hasOwnProperty('commandUnits')) {
     batch.commandUnits = JSON.stringify(batch.commandUnits)
   }
+  if (batch.hasOwnProperty('graph')) {
+    batch.graph = JSON.stringify(batch.graph)
+  }
+  
 }
 
 // collection: services
