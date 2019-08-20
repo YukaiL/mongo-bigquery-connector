@@ -3,12 +3,7 @@
     "mode": "NULLABLE", 
     "name": "lastUpdatedAt", 
     "type": "INTEGER"
-  }, 
-  {
-    "mode": "NULLABLE", 
-    "name": "graph", 
-    "type": "STRING"
-  }, 
+  },
   {
     "mode": "NULLABLE", 
     "name": "ingestionTime", 

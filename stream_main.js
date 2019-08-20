@@ -15,12 +15,13 @@ const GOOGLE_APPLICATION_CREDENTIALS =
   process.env.GOOGLE_APPLICATION_CREDENTIALS
 const url = process.env.MONGO_URL
 const datasetId = process.env.BIGQUERY_DATASET
+const batchSize = parseInt(process.env.MONGO_CONNECTOR_BATCHSIZE)
 console.log('Looking for GOOGLE_APPLICATION_CREDENTIALS key file path: ')
-console.log('found: ' + GOOGLE_APPLICATION_CREDENTIALS)
+process.stdout.write('found: ')
+console.log('\x1b[32m%s\x1b[0m', GOOGLE_APPLICATION_CREDENTIALS)
 console.log('Looking for datasetId: ')
-console.log('found: ' + datasetId)
-var countBefore = 0
-var countAfter = 0
+process.stdout.write('found: ')
+console.log('\x1b[32m%s\x1b[0m', datasetId)
 console.log(
   '------------------------------------------------------------------'
 )
@@ -77,7 +78,8 @@ async function getDataset(existsArr) {
   if (!exists) {
     await createDataset(dataset)
   } else {
-    console.log('Start updating ' + dataset.id + ' dataset.')
+    process.stdout.write('Start updating dataset: ')
+    console.log('\x1b[32m%s\x1b[0m', dataset.id)
   }
 }
 
@@ -165,9 +167,11 @@ async function getTable(exists, queryFile) {
   var targetTable = queryFile.target_table
   if (!exists) {
     await createTable(targetTable)
-    console.log(targetTable + ' table created.')
+    process.stdout.write('Table created: ')
+    console.log('\x1b[32m%s\x1b[0m', targetTable)
   } else {
-    console.log('Start updating ' + targetTable + ' data.')
+    process.stdout.write('Updating table: ')
+    console.log('\x1b[32m%s\x1b[0m', targetTable)
   }
 }
 
@@ -223,16 +227,29 @@ async function streamData(queryFile) {
   }
 
   // Start streaming process.
-  console.log('Start streaming count: ' + streamedCount)
+
+  // //DEBUG:
+  // var start = Date.now()
+  // //console.log('Start streaming count: ' + streamedCount)
+
   query.push({ $skip: 0 })
   await toBigQuery(query, sourceTable, targetTable)
-  console.log('This batch count: ' + streamedCount)
-  while (streamedCount === 100) {
+  //console.log('This batch count: ' + streamedCount)
+  process.stdout.write('#')
+  while (streamedCount === batchSize) {
     query.pop()
     query.pop()
     query.push({ $skip: totalStreamed })
     await toBigQuery(query, sourceTable, targetTable)
   }
+  console.log('DONE!')
+  //DEBUG:
+  // var end = Date.now()
+  // var timeTaken = (end - start) / 1000
+  // console.log('Time taken: ' + timeTaken + 'seconds')
+
+  process.stdout.write('Record number streamed: ')
+  console.log('\x1b[33m%s\x1b[0m', totalStreamed)
   console.log('---------------------------------------------------------------')
   return
 }
@@ -241,7 +258,7 @@ async function toBigQuery(query, sourceTable, targetTable) {
   const batch = await dbo
     .collection(sourceTable)
     .aggregate(query)
-    .limit(100)
+    .limit(batchSize)
     .toArray()
 
   // Avoid empty ingestions
@@ -256,53 +273,9 @@ async function toBigQuery(query, sourceTable, targetTable) {
   await insertRowsAsStream(targetTable, batch)
   streamedCount = batch.length
   totalStreamed += batch.length
-  console.log('This ' + targetTable + ' batch count: ' + streamedCount)
-  console.log('Total streamed for ' + targetTable + ' data: ' + totalStreamed)
-
-  // .then(batch => {
-  //   streamedCount = batch.length
-  //   totalStreamed += batch.length
-  //   for (var i = 0; i < batch.length; i++) {
-  //     trans.stringPack(sourceTable, batch[i])
-  //     time.insertIngestionTime(timeNow, batch[i])
-  //   }
-  //   await insertRowsAsStream(targetTable, batch)
-  // })
+  process.stdout.write('#')
+  //console.log('This ' + targetTable + ' batch count: ' + streamedCount)
 }
-
-/*
-  streamedCount = 0
-  strm.on('data', batch => {
-    // get rid of collection sourceTable at the end.
-    if (batch != sourceTable) {
-      // check for illegal keys
-      trans.stringPack(sourceTable, batch)
-      time.insertIngestionTime(timeNow, batch)
-      countBefore += 1
-      console.log('Current buffer before 1 insertion: ####' + countBefore)
-      insertRowsAsStream(targetTable, batch)
-      console.log('Current buffer after 1 insertion: ' + countAfter)
-      //tryLimitStream
-      streamedCount += 1
-      if (global.gc) {
-        console.log(
-          'GC is running: ' +
-            Math.round(process.memoryUsage().rss / (1024 * 1024)) +
-            'MB'
-        )
-      }
-    }
-  })
-
-  strm.on('end', () => {
-    console.log(
-      '------------------------------------------------------------------------------'
-    )
-    console.log(targetTable + ' table finishing updating.')
-    res(targetTable)
-  })
-}
-*/
 
 // Streaming function
 async function insertRowsAsStream(tableID, rows) {
@@ -331,33 +304,9 @@ async function insertRowsAsStream(tableID, rows) {
         console.log(error)
       }
     })
-  countAfter += 1
-}
-
-function sleep(ms) {
-  return new Promise(res => {
-    setTimeout(res, ms)
-  })
 }
 
 // Save lastUpdateTime gotten from BigQuery as variable
 function recordLastUpdateTime(UnixTimeStamp) {
   lastUpdateTime = UnixTimeStamp
-}
-
-function scheduleGc() {
-  if (!global.gc) {
-    console.log('Garbage collection is not exposed')
-    return
-  }
-
-  // schedule next gc within a random interval (e.g. 15-45 minutes)
-  // tweak this based on your app's memory usage
-  var nextSeconds = 5
-
-  setTimeout(function() {
-    global.gc()
-    console.log('Manual gc', process.memoryUsage())
-    scheduleGc()
-  }, nextSeconds * 1000)
 }
