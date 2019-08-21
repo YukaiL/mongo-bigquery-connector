@@ -15,13 +15,20 @@ const GOOGLE_APPLICATION_CREDENTIALS =
   process.env.GOOGLE_APPLICATION_CREDENTIALS
 const url = process.env.MONGO_URL
 const datasetId = process.env.BIGQUERY_DATASET
-const batchSize = parseInt(process.env.MONGO_CONNECTOR_BATCHSIZE)
+var batchSize = parseInt(process.env.MONGO_CONNECTOR_BATCHSIZE)
 console.log('Looking for GOOGLE_APPLICATION_CREDENTIALS key file path: ')
 process.stdout.write('found: ')
 console.log('\x1b[32m%s\x1b[0m', GOOGLE_APPLICATION_CREDENTIALS)
 console.log('Looking for datasetId: ')
 process.stdout.write('found: ')
 console.log('\x1b[32m%s\x1b[0m', datasetId)
+if (typeof batchSize !== 'undefined' && batchSize) {
+} else {
+  batchSize = 1000
+  console.log('yes')
+}
+process.stdout.write('Batch size: ')
+console.log('\x1b[32m%s\x1b[0m', batchSize)
 console.log(
   '------------------------------------------------------------------'
 )
