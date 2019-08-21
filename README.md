@@ -16,16 +16,18 @@ The script will be run as a docker image. Necessary credentials are need for it 
 
 - Follow [Google authentication instruction](https://cloud.google.com/docs/authentication/getting-started) to create a service account key.
 
-- Save the key JSON file locally.
+- Save the key JSON key file locally.
 
 ##### 1.2. Mongodb url
 
-Go to the [Vault](https://vault-internal.harness.io:8200/ui/vault/secrets?with=okta) and get:
- `db_address`
- `db_database`
- `db_port`
- `db_read_password`
- `db_read_user`
+Go to [Vault](https://vault-internal.harness.io:8200/ui/vault/secrets?with=okta) and get:
+`db_address`
+`db_database`
+`db_port`
+`db_read_password`
+`db_read_user`
+
+and construct the url according to format.
 
 #### 1. Docker
 
@@ -36,13 +38,13 @@ Go to the [Vault](https://vault-internal.harness.io:8200/ui/vault/secrets?with=o
 - Pull the mongo-bigquery-connector image from Docker Hub:
 
 ```
-docker pull us.gcr.io/platform-205701/harness/mongo-bigquery-connector
+docker pull us.gcr.io/platform-205701/harness/mongo-bigquery-connector:latest
 ```
 
 - Run the image:
 
-```
-docker run --env-file env.list -v /Users/yukailuo/mongo-bigquery-connector/data:/app/data mongo-bigquery-connector
+```Shell
+docker run -e GOOGLE_APPLICATION_CREDENTIALS="/app/var/bigquery_credential.json" -e MONGO_URL=<"mongo_url"> -e BIGQUERY_DATASET=<’dataset_name’> -e MONGO_CONNECTOR_BATCHSIZE=<batch_size> -v <path_to_local_dir_containing_google_credential_file>:/app/var us.gcr.io/platform-205701/harness/mongo-bigquery-connector
 ```
 
 ### Prerequisites: Running script on local machine
@@ -65,16 +67,6 @@ Download the latest Node js from [HERE](https://nodejs.org/en/download/)
 ##### 3.1. Google credentials
 
 - Follow [Google authentication instruction](https://cloud.google.com/docs/authentication/getting-started) to create a service account key.
-
-- Rename key file to `bigquery_credential.json`
-
-- Move the key file to `data` directory of this repository.
-
-For example:
-
-```Shell
-mv <path_to_key_file>/bigquery_credential.json <path_to_this_repository>/data
-```
 
 - Set the environment variable **_GOOGLE_APPLICATION_CREDENTIALS_** to the path to the key file.
 
@@ -113,7 +105,18 @@ $ npm install --save @google-cloud/bigquery
 $ npm install --save mongodb
 ```
 
-### 5. Running the script
+#### 5. [OPTIONAL] Specify the batch size for streaming
+
+Set it as environment variable **_MONGO_CONNECTOR_BATCHSIZE_**.
+Default value is 1000.
+
+For example:
+
+```
+export MONGO_CONNECTOR_BATCHSIZE=2000
+```
+
+### 6. Running the script
 
 Run:
 
