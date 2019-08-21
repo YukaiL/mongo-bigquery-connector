@@ -22,10 +22,10 @@ console.log('\x1b[32m%s\x1b[0m', GOOGLE_APPLICATION_CREDENTIALS)
 console.log('Looking for datasetId: ')
 process.stdout.write('found: ')
 console.log('\x1b[32m%s\x1b[0m', datasetId)
+//If no batch size is specified, use 1000 as default.
 if (typeof batchSize !== 'undefined' && batchSize) {
 } else {
   batchSize = 1000
-  console.log('yes')
 }
 process.stdout.write('Batch size: ')
 console.log('\x1b[32m%s\x1b[0m', batchSize)
