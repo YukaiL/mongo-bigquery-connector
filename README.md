@@ -78,7 +78,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="<path_to_the_repository>/data/bigquery_cr
 
 ##### 3.2. BigQuery
 
-Set **_BIGQUERY_PROJECT_ID_** to the target BigQuery project.
+Set **_BIGQUERY_DATASET_ID_** to the target BigQuery dataset.
 
 For example:
 
