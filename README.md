@@ -1,4 +1,4 @@
-# mongo-bigquery-connector
+﻿# mongo-bigquery-connector
 
 mongo-bigquery-connector is an internal intern project at Harness. It consists of a connector which queries data from mongodb and streams it into Google BigQuery, and dashboards generated from BigQuery data in Google Data Studio for visualization and analysis purpose.
 
@@ -116,13 +116,39 @@ For example:
 export MONGO_CONNECTOR_BATCHSIZE=2000
 ```
 
-### 6. Running the script
+#### 6. Running the script
 
 Run:
 
 ```
 $ node stream_main.js
 ```
+
+### Add a new collection
+
+#### 1.Create the JSON query file
+
+##### Specify:
+
+`source_table` -- the collection name in MongoDB
+`target_table` -- the table name in BigQuery
+`query` -- the Mongo query to run, which specifies the field to include in BigQuery
+`isSnapshot` -- the type of data
+
+##### Move the file into `data` directory of this project
+
+#### 2.Create the JSON schema file
+
+##### Specify the field name and data type for BigQuery table
+
+##### Modify the file name to be:
+
+```Shell
+<BigQuery-table-name>_BQschema.json
+```
+
+##### Move the file into `data` directory of this project
+
 
 ## Authors
 
